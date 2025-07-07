@@ -17,11 +17,78 @@
       "ux": "L' <ux /> parce que je crois que chaque pixel compte pour améliorer la vie des utilisateurs.",
       "ux_text": "UX me tient à cœur"
     },
+    "skills": {
+      "slogan": "Maîtrise technique et créative pour donner vie à vos projets",
+      "more": "Et toujours en train d'apprendre de nouvelles technologies !"
+    },
+    "projects": {
+      "slogan": "Une sélection de mes réalisations les plus représentatives",
+      "descs": {
+        "intuit-risks": "Plateforme complète de gestion de risques (Travail de bachelor 2024)",
+        "ubutruc": "Plateforme de gestion des participants aux cours d'intégration et de langues de l'association OuverTür",
+        "osteo": "Carte de visite pour une jeune ostéopathe tout juste diplomée",
+        "co2": "Application de visualisation des émissions de CO2 aucour des siècles",
+        "weather": "Prototype d'application pour MX3 lors des SRG SSR Hackdays 2023 (1ère place ex æquo)",
+        "bglovers": "Site e-commerce fictif réalisé dans le cadre d'un cours d'e-commerce",
+        "pronum": "Blog fictif réalisé dans le cadre d'un cours de marketing digital",
+        "fs": "Jeu VR réalisé dans le cadre d'un cours de développement",
+        "otw": "Plateforme d'écoute et de gestion de podcasts pour la ville d'Yverdon-les-Bains",
+        "campus-api": "API pour une application de rencontres entre étudiants et étudiantes",
+        "campus": "Application de rencontres entre étudiants et étudiantes crée à l'aide de l'API Campusoul",
+        "oep": "Plateforme d'interaction entre les auditeurs et les présentateurs de l'émission On En Parle"
+      },
+      "titles": {
+        "intuit-risks": "Intuit Risks",
+        "ubutruc": "Ubutruc",
+        "osteo": "Carte de visite Ostéopathe",
+        "co2": "CO2 Centuries",
+        "weather": "Weather Mood",
+        "bglovers": "Burger Lovers",
+        "Pronum": "Pronumeric",
+        "fs": "Forest Shooter",
+        "otw": "On The Way",
+        "campus-api": "Campusoul API",
+        "campus": "Campusoul",
+        "oep": "On En Parle"
+      },
+      "talk": "Intéressé par mon travail ?"
+    },
+    "contact": {
+      "slogan": "Prêt à donner vie à votre projet ? Discutons ensemble !",
+      "talk": " Parlons de votre projet",
+      "talk_text": "Que ce soit pour du développement web, du design UX/UI, ou un projet fullstack, je suis là pour transformer vos idées en réalité.",
+      "answer": "Réponse sous 48h",
+      "free": "Devis gratuit",
+      "custom": "Consultation personnalisée",
+      "follow": "Suivez-moi",
+      "name": "Nom complet",
+      "name_p": "Votre nom",
+      "email": "Email",
+      "email_p": "votre@mail.ch",
+      "message": "Message",
+      "message_p": "Parlez-moi de votre projet...",
+      "send": "Envoyer le message"
+    },
+    "footer": {
+      "copyright": "Design & code par <iviou /> - 2025",
+      "up": "Retour en haut",
+      "download": "CV PDF"
+    },
     "common": {
-      "dev": "développement",
+      "dev": "Développement",
       "years": "Années",
       "projects": "Projets",
-      "passion": "Passion"
+      "passion": "Passion",
+      "all": "Toutes",
+      "design": "Design",
+      "fullstack": "Fullstack",
+      "all-projects": "Tous les projets"
+    },
+    "buttons": {
+      "repo": "Voir le repo GitHub",
+      "certificate": "Voir l'attestation de collaboration",
+      "report": "Voir le rapport de projet",
+      "talk": "Discutons de votre projet"
     }
   },
   "en": {
@@ -33,15 +100,179 @@
       "contact": "Contact"
     },
     "hero": {
-      "dev": "<backend /> & <frontend /> developer",
+      "dev": "<frontend /> & <backend /> developer",
       "designer": "Passionate <uxui /> designer",
       "contact_me": "Contact me"
     },
     "about": {
-      "dev": "I love le <dev /> parce qu'il permet de transformer des idées en solutions concrètes, d'aider les gens à trouver ce qu'ils cherchent, de résoudre des problèmes complexes et de créer des interfaces qui rendent l'expérience simple et agréable."
+      "dev": "I love <dev /> because it transforms ideas into tangible solutions, helps people find what they’re looking for, solves complex problems, and creates interfaces that make experiences simple and enjoyable.",
+      "ux": "<ux /> because I believe every pixel matters to improve users' lives.",
+      "ux_text": "UX is close to my heart"
+    },
+    "skills": {
+      "slogan": "Technical and creative mastery to bring your projects to life",
+      "more": "Always learning new technologies!"
+    },
+    "projects": {
+      "slogan": "A selection of my most representative projects",
+      "descs": {
+        "intuit-risks": "Full risk-management platform (Bachelor thesis 2024)",
+        "ubutruc": "Participant management platform for integration and language courses by the OuverTür association",
+        "osteo": "Business card for a newly graduated osteopath",
+        "co2": "CO₂ emissions visualization app across centuries",
+        "weather": "App prototype for MX3 during the SRG SSR Hackdays 2023 (tied 1st place)",
+        "bglovers": "Fictional e-commerce site created for an e-commerce course",
+        "pronum": "Fictional blog created for a digital marketing course",
+        "fs": "VR game developed during a course",
+        "otw": "Podcast listening and management platform for the city of Yverdon-les-Bains",
+        "campus-api": "API for a dating app for students",
+        "campus": "Student dating app created using the Campusoul API",
+        "oep": "Interaction platform between listeners and presenters of the show 'On En Parle'"
+      },
+      "titles": {
+        "intuit-risks": "Intuit Risks",
+        "ubutruc": "Ubutruc",
+        "osteo": "Osteopath Business Card",
+        "co2": "CO2 Centuries",
+        "weather": "Weather Mood",
+        "bglovers": "Burger Lovers",
+        "Pronum": "Pronumeric",
+        "fs": "Forest Shooter",
+        "otw": "On The Way",
+        "campus-api": "Campusoul API",
+        "campus": "Campusoul",
+        "oep": "On En Parle"
+      },
+      "talk": "Interested in my work?"
+    },
+    "contact": {
+      "slogan": "Ready to bring your project to life? Let's talk!",
+      "talk": "Let's talk about your project",
+      "talk_text": "Whether it's for web development, UX/UI design, or a fullstack project, I'm here to turn your ideas into reality.",
+      "answer": "Reply within 48h",
+      "free": "Free quote",
+      "custom": "Personalized consultation",
+      "follow": "Follow me",
+      "name": "Full name",
+      "name_p": "Your name",
+      "email": "Email",
+      "email_p": "your@mail.com",
+      "message": "Message",
+      "message_p": "Tell me about your project...",
+      "send": "Send message"
+    },
+    "footer": {
+      "copyright": "Design & code by <iviou /> - 2025",
+      "up": "Back to top",
+      "download": "Download CV PDF"
     },
     "common": {
-      "dev": "devi"
+      "dev": "Development",
+      "years": "Years",
+      "projects": "Projects",
+      "passion": "Passion",
+      "all": "All",
+      "design": "Design",
+      "fullstack": "Fullstack",
+      "all-projects": "All projects"
+    },
+    "buttons": {
+      "repo": "View GitHub repo",
+      "certificate": "View collaboration certificate",
+      "report": "View project report",
+      "talk": "Let's talk about your project"
+    }
+  },
+  "it": {
+    "nav": {
+      "home": "Home",
+      "about": "Chi sono",
+      "skills": "Competenze",
+      "projects": "Progetti",
+      "contact": "Contatto"
+    },
+    "hero": {
+      "dev": "Sviluppatore <frontend /> & <backend />",
+      "designer": "Designer <uxui /> appassionato",
+      "contact_me": "Contattami"
+    },
+    "about": {
+      "dev": "Amo il <dev /> perché trasforma le idee in soluzioni concrete, aiuta le persone a trovare ciò che cercano, risolve problemi complessi e crea interfacce che rendono l'esperienza semplice e piacevole.",
+      "ux": "<ux /> perché credo che ogni pixel conti per migliorare la vita degli utenti.",
+      "ux_text": "UX mi sta a cuore"
+    },
+    "skills": {
+      "slogan": "Padronanza tecnica e creativa per dare vita ai tuoi progetti",
+      "more": "Sempre pronto a imparare nuove tecnologie!"
+    },
+    "projects": {
+      "slogan": "Una selezione dei miei progetti più rappresentativi",
+      "descs": {
+        "intuit-risks": "Piattaforma completa di gestione dei rischi (Tesi di laurea 2024)",
+        "ubutruc": "Piattaforma per la gestione dei partecipanti ai corsi di integrazione e lingua dell’associazione OuverTür",
+        "osteo": "Biglietto da visita per una giovane osteopata neolaureata",
+        "co2": "App per la visualizzazione delle emissioni di CO₂ nei secoli",
+        "weather": "Prototype di app per MX3 agli SRG SSR Hackdays 2023 (1º posto ex aequo)",
+        "bglovers": "Sito e-commerce fittizio realizzato per un corso di e-commerce",
+        "pronum": "Blog fittizio realizzato per un corso di marketing digitale",
+        "fs": "Gioco VR realizzato durante un corso",
+        "otw": "Piattaforma di ascolto e gestione podcast per la città di Yverdon-les-Bains",
+        "campus-api": "API per un'app di incontri tra studenti",
+        "campus": "App di incontri tra studenti creata con l'API Campusoul",
+        "oep": "Piattaforma di interazione tra ascoltatori e presentatori del programma 'On En Parle'"
+      },
+      "titles": {
+        "intuit-risks": "Intuit Risks",
+        "ubutruc": "Ubutruc",
+        "osteo": "Biglietto da visita Osteopata",
+        "co2": "CO2 Centuries",
+        "weather": "Weather Mood",
+        "bglovers": "Burger Lovers",
+        "Pronum": "Pronumeric",
+        "fs": "Forest Shooter",
+        "otw": "On The Way",
+        "campus-api": "Campusoul API",
+        "campus": "Campusoul",
+        "oep": "On En Parle"
+      },
+      "talk": "Interessato ai miei progetti?"
+    },
+    "contact": {
+      "slogan": "Pronto a dare vita al tuo progetto? Parliamone!",
+      "talk": "Parliamo del tuo progetto",
+      "talk_text": "Che si tratti di sviluppo web, design UX/UI o un progetto fullstack, sono qui per trasformare le tue idee in realtà.",
+      "answer": "Risposta entro 48h",
+      "free": "Preventivo gratuito",
+      "custom": "Consulenza personalizzata",
+      "follow": "Seguimi",
+      "name": "Nome completo",
+      "name_p": "Il tuo nome",
+      "email": "Email",
+      "email_p": "tuo@mail.com",
+      "message": "Messaggio",
+      "message_p": "Parlami del tuo progetto...",
+      "send": "Invia il messaggio"
+    },
+    "footer": {
+      "copyright": "Design & code di <iviou /> - 2025",
+      "up": "Torna su",
+      "download": "Scarica CV in PDF"
+    },
+    "common": {
+      "dev": "Sviluppo",
+      "years": "Anni",
+      "projects": "Progetti",
+      "passion": "Passione",
+      "all": "Tutti",
+      "design": "Design",
+      "fullstack": "Fullstack",
+      "all-projects": "Tutti i progetti"
+    },
+    "buttons": {
+      "repo": "Vedi il repo su GitHub",
+      "certificate": "Vedi l'attestato di collaborazione",
+      "report": "Vedi il report del progetto",
+      "talk": "Parliamo del tuo progetto"
     }
   }
 }

@@ -1,103 +1,29 @@
 import { useState } from "react";
+import type { Language } from "../Types";
+import translations from "../translations.json";
+import { SKILLS } from "../Constants/Skills";
 
-const SkillsSection = () => {
+interface AboutSectionProps {
+  selectedLanguage: Language;
+}
+
+const SkillsSection = ({ selectedLanguage }: AboutSectionProps) => {
   const [activeFilter, setActiveFilter] = useState("all");
 
-  const skills = [
-    // Development
-    {
-      name: "Vue.js",
-      level: 90,
-      category: "dev",
-      color: "from-green-500 to-emerald-500",
-    },
-    {
-      name: "PHP",
-      level: 85,
-      category: "dev",
-      color: "from-blue-500 to-indigo-500",
-    },
-    {
-      name: "Laravel",
-      level: 88,
-      category: "dev",
-      color: "from-red-500 to-orange-500",
-    },
-    {
-      name: "JavaScript",
-      level: 92,
-      category: "dev",
-      color: "from-yellow-500 to-amber-500",
-    },
-    {
-      name: "HTML/CSS",
-      level: 95,
-      category: "dev",
-      color: "from-orange-500 to-red-500",
-    },
-
-    // Design
-    {
-      name: "Figma",
-      level: 90,
-      category: "design",
-      color: "from-purple-500 to-violet-500",
-    },
-    {
-      name: "Illustrator",
-      level: 85,
-      category: "design",
-      color: "from-pink-500 to-rose-500",
-    },
-    {
-      name: "UX Design",
-      level: 88,
-      category: "design",
-      color: "from-cyan-500 to-blue-500",
-    },
-    {
-      name: "UI Design",
-      level: 87,
-      category: "design",
-      color: "from-teal-500 to-green-500",
-    },
-
-    // Fullstack
-    {
-      name: "API REST",
-      level: 85,
-      category: "fullstack",
-      color: "from-violet-500 to-purple-500",
-    },
-    {
-      name: "Bases de données",
-      level: 82,
-      category: "fullstack",
-      color: "from-indigo-500 to-blue-500",
-    },
-    {
-      name: "Git",
-      level: 90,
-      category: "fullstack",
-      color: "from-gray-500 to-slate-500",
-    },
-  ];
-
   const filters = [
-    { id: "all", label: "Toutes", color: "from-violet-500 to-pink-500" },
-    { id: "dev", label: "Développement", color: "from-blue-500 to-cyan-500" },
-    { id: "design", label: "Design", color: "from-pink-500 to-rose-500" },
+    { id: "all", color: "from-violet-500 to-pink-500" },
+    { id: "dev", color: "from-blue-500 to-cyan-500" },
+    { id: "design", color: "from-pink-500 to-rose-500" },
     {
       id: "fullstack",
-      label: "Fullstack",
       color: "from-purple-500 to-indigo-500",
     },
   ];
 
   const filteredSkills =
     activeFilter === "all"
-      ? skills
-      : skills.filter((skill) => skill.category === activeFilter);
+      ? SKILLS
+      : SKILLS.filter((skill) => skill.category === activeFilter);
 
   return (
     <section id="skills" className="py-24 px-4 relative bg-slate-800/30">
@@ -109,12 +35,12 @@ const SkillsSection = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
-                Compétences
+                {translations[selectedLanguage].nav.skills}
               </span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-violet-500 to-pink-500 mx-auto rounded-full mb-8" />
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Maîtrise technique et créative pour donner vie à vos projets
+              {translations[selectedLanguage].skills.slogan}
             </p>
           </div>
 
@@ -123,13 +49,13 @@ const SkillsSection = () => {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`px-6 py-3 rounded-full font-medium transition-all capitalize duration-300 ${
                   activeFilter === filter.id
                     ? `bg-gradient-to-r ${filter.color} text-white shadow-lg transform scale-105`
                     : "bg-slate-800/50 text-gray-300 hover:bg-slate-700/50 hover:text-white border border-slate-700/50"
                 }`}
               >
-                {filter.label}
+                {translations[selectedLanguage].common[filter.id]}
               </button>
             ))}
           </div>
@@ -171,7 +97,7 @@ const SkillsSection = () => {
 
           <div className="text-center mt-16">
             <p className="text-gray-400 text-lg">
-              Et toujours en train d'apprendre de nouvelles technologies ! 🚀
+              {translations[selectedLanguage].skills.more} 🚀
             </p>
           </div>
         </div>

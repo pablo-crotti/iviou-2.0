@@ -24,7 +24,7 @@ const HeroSection = ({ selectedLanguage, setLanguage }: HeroSectionProps) => {
       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto ">
-        <div className="flex flex-col w-full md:flex-row md:absolute gap-2 left-0 -top-30 justify-between mb-12 ">
+        <div className="flex flex-col w-full md:flex-row md:absolute gap-4 left-0 -top-30 justify-between mb-12 ">
           {LANGUAGES_OPTIONS.map((lang, index) => (
             <LanguageSelector
               key={index}

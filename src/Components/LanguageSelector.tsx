@@ -16,7 +16,7 @@ const LanguageSelector = ({
   return (
     <div className="relative group">
       <button
-        className="relative inline-block p-px font-semibold leading-6 text-white bg-slate-800 shadow-2xl cursor-pointer disabled:cursor-auto rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out "
+        className="relative inline-block font-semibold leading-6 text-white bg-slate-800 shadow-2xl cursor-pointer disabled:cursor-auto rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out "
         disabled={selected}
         onClick={() => setLanguage(value)}
       >

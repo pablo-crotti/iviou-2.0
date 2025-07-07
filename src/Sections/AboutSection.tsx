@@ -24,7 +24,7 @@ const AboutSection = ({ selectedLanguage }: AboutSectionProps) => {
             <div className="relative">
               <div className="w-80 h-80 mx-auto bg-gradient-to-br from-slate-300 to-slate-700 rounded-3xl p-1">
                 <div className="w-full h-full bg-slate-900 rounded-3xl flex items-center justify-center overflow-hidden">
-                  <img src="https://iviou.ch/img/me.png" />
+                  <img src="/me.png" alt="Pablo Crotti" />
                   {/* <div className="text-center"> */}
                   {/* <div className="w-24 h-24 bg-gradient-to-br from-violet-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center">
                       <span className="text-2xl font-bold text-white">IV</span>
@@ -52,7 +52,7 @@ const AboutSection = ({ selectedLanguage }: AboutSectionProps) => {
                 <p className="text-lg text-gray-300 leading-relaxed mb-6">
                   {interpolate(translations[selectedLanguage].about.dev, {
                     dev: (
-                      <span className="text-violet-400 font-semibold">
+                      <span className="text-violet-400 font-semibold lowercase">
                         {translations[selectedLanguage].common.dev}
                       </span>
                     ),
@@ -82,7 +82,7 @@ const AboutSection = ({ selectedLanguage }: AboutSectionProps) => {
                 </div>
                 <div className="text-center p-4 bg-slate-800/30 rounded-xl border border-slate-700/30">
                   <div className="text-2xl font-bold text-pink-400 mb-1">
-                    50+
+                    30+
                   </div>
                   <div className="text-sm text-gray-400">
                     {" "}

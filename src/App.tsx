@@ -12,7 +12,7 @@ import type { Language } from "./Types";
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
-  const [activeSection, setActiveSection] = useState("hero");
+  const [activeSection, setActiveSection] = useState("home");
 
   const initialLanguage = LANGUAGES_OPTIONS.some(
     (el) => el.value == navigator.language
@@ -28,7 +28,7 @@ function App() {
     const handleScroll = () => {
       setScrollY(window.scrollY);
 
-      const sections = ["hero", "about", "skills", "projects", "contact"];
+      const sections = ["home", "about", "skills", "projects", "contact"];
       const currentSection = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
@@ -38,7 +38,15 @@ function App() {
         return false;
       });
 
-      if (currentSection) {
+      if (window.scrollY <= window.innerHeight * 0.5) {
+        setActiveSection("home");
+      } else if (
+        scrollY /
+          (document.documentElement.scrollHeight - window.innerHeight) >=
+        0.8
+      ) {
+        setActiveSection("contact");
+      } else if (currentSection) {
         setActiveSection(currentSection);
       }
     };
@@ -70,10 +78,10 @@ function App() {
           setLanguage={setSelectedLanguage}
         />
         <AboutSection selectedLanguage={selectedLanguage} />
-        <SkillsSection />
-        <ProjectsSection />
-        <ContactSection />
-        <Footer />
+        <SkillsSection selectedLanguage={selectedLanguage} />
+        <ProjectsSection selectedLanguage={selectedLanguage} />
+        <ContactSection selectedLanguage={selectedLanguage} />
+        <Footer selectedLanguage={selectedLanguage} />
       </div>
     </>
   );
