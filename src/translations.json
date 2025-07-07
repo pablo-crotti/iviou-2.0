@@ -1,0 +1,47 @@
+{
+  "fr": {
+    "nav": {
+      "home": "Accueil",
+      "about": "À propos",
+      "skills": "Compétences",
+      "projects": "Projets",
+      "contact": "Contact"
+    },
+    "hero": {
+      "dev": "Développeur <frontend /> & <backend />",
+      "designer": "Designer <uxui /> passionné",
+      "contact_me": "Contactez-moi"
+    },
+    "about": {
+      "dev": "J'aime le <dev /> parce qu'il permet de transformer des idées en solutions concrètes, d'aider les gens à trouver ce qu'ils cherchent, de résoudre des problèmes complexes et de créer des interfaces qui rendent l'expérience simple et agréable.",
+      "ux": "L' <ux /> parce que je crois que chaque pixel compte pour améliorer la vie des utilisateurs.",
+      "ux_text": "UX me tient à cœur"
+    },
+    "common": {
+      "dev": "développement",
+      "years": "Années",
+      "projects": "Projets",
+      "passion": "Passion"
+    }
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "hero": {
+      "dev": "<backend /> & <frontend /> developer",
+      "designer": "Passionate <uxui /> designer",
+      "contact_me": "Contact me"
+    },
+    "about": {
+      "dev": "I love le <dev /> parce qu'il permet de transformer des idées en solutions concrètes, d'aider les gens à trouver ce qu'ils cherchent, de résoudre des problèmes complexes et de créer des interfaces qui rendent l'expérience simple et agréable."
+    },
+    "common": {
+      "dev": "devi"
+    }
+  }
+}
