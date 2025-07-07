@@ -23,7 +23,6 @@ const Footer = ({ selectedLanguage }: AboutSectionProps) => {
             </p>
           </div>
 
-          {/* Links */}
           <div className="flex items-center space-x-8">
             <button
               onClick={() =>

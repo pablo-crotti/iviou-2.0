@@ -7,10 +7,12 @@ interface AboutSectionProps {
   selectedLanguage: Language;
 }
 
-const SkillsSection = ({ selectedLanguage }: AboutSectionProps) => {
-  const [activeFilter, setActiveFilter] = useState("all");
+type FilterId = "all" | "dev" | "design" | "fullstack";
 
-  const filters = [
+const SkillsSection = ({ selectedLanguage }: AboutSectionProps) => {
+  const [activeFilter, setActiveFilter] = useState<FilterId>("all");
+
+  const filters: { id: FilterId; color: string }[] = [
     { id: "all", color: "from-violet-500 to-pink-500" },
     { id: "dev", color: "from-blue-500 to-cyan-500" },
     { id: "design", color: "from-pink-500 to-rose-500" },
@@ -55,7 +57,14 @@ const SkillsSection = ({ selectedLanguage }: AboutSectionProps) => {
                     : "bg-slate-800/50 text-gray-300 hover:bg-slate-700/50 hover:text-white border border-slate-700/50"
                 }`}
               >
-                {translations[selectedLanguage].common[filter.id]}
+                {
+                  (
+                    translations[selectedLanguage].common as Record<
+                      FilterId,
+                      string
+                    >
+                  )[filter.id]
+                }
               </button>
             ))}
           </div>

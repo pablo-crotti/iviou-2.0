@@ -10,7 +10,9 @@ interface AboutSectionProps {
 const ProjectsSection = ({ selectedLanguage }: AboutSectionProps) => {
   const [activeFilter, setActiveFilter] = useState("all-projects");
 
-  const filters = [
+  type FilterId = "all-projects" | "dev" | "design" | "fullstack";
+
+  const filters: { id: FilterId; color: string }[] = [
     {
       id: "all-projects",
       color: "from-violet-500 to-pink-500",
@@ -110,7 +112,7 @@ const ProjectsSection = ({ selectedLanguage }: AboutSectionProps) => {
                           <div className="w-16 h-16 bg-gradient-to-br from-violet-500 to-pink-500 rounded-full mx-auto mb-2 flex items-center justify-center">
                             <span className="text-xl font-bold text-white">
                               {translations[selectedLanguage].projects.titles[
-                                project.title
+                                project.title as keyof (typeof translations)[typeof selectedLanguage]["projects"]["titles"]
                               ].charAt(0)}
                             </span>
                           </div>
@@ -126,19 +128,23 @@ const ProjectsSection = ({ selectedLanguage }: AboutSectionProps) => {
                     <h3 className="text-xl font-bold text-white group-hover:text-violet-400 transition-colors duration-300">
                       {
                         translations[selectedLanguage].projects.titles[
-                          project.title
+                          project.title as keyof (typeof translations)[typeof selectedLanguage]["projects"]["titles"]
                         ]
                       }
                     </h3>
                     <span className="text-xs bg-gradient-to-r from-violet-500 to-pink-500 text-white px-2 py-1 rounded-full">
-                      {translations[selectedLanguage].common[project.category]}
+                      {
+                        translations[selectedLanguage].common[
+                          project.category as keyof (typeof translations)[typeof selectedLanguage]["common"]
+                        ]
+                      }
                     </span>
                   </div>
 
                   <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                     {
                       translations[selectedLanguage].projects.descs[
-                        project.description
+                        project.description as keyof (typeof translations)[typeof selectedLanguage]["projects"]["descs"]
                       ]
                     }
                   </p>
@@ -164,7 +170,7 @@ const ProjectsSection = ({ selectedLanguage }: AboutSectionProps) => {
                     >
                       {
                         translations[selectedLanguage].buttons[
-                          project.buttonText
+                          project.buttonText as keyof (typeof translations)[typeof selectedLanguage]["buttons"]
                         ]
                       }{" "}
                       →

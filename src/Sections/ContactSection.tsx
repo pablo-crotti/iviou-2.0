@@ -36,7 +36,6 @@ const ContactSection = ({ selectedLanguage }: AboutSectionProps) => {
         <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-tl from-purple-600/5 to-blue-600/5 rounded-full blur-3xl" />
 
         <div className="relative z-10">
-          {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">

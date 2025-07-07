@@ -25,12 +25,6 @@ const AboutSection = ({ selectedLanguage }: AboutSectionProps) => {
               <div className="w-80 h-80 mx-auto bg-gradient-to-br from-slate-300 to-slate-700 rounded-3xl p-1">
                 <div className="w-full h-full bg-slate-900 rounded-3xl flex items-center justify-center overflow-hidden">
                   <img src="/me.png" alt="Pablo Crotti" />
-                  {/* <div className="text-center"> */}
-                  {/* <div className="w-24 h-24 bg-gradient-to-br from-violet-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-white">IV</span>
-                    </div>
-                    <p className="text-gray-400">Photo profile</p> */}
-                  {/* </div> */}
                 </div>
               </div>
               <div
