@@ -17,7 +17,7 @@ const HeroSection = ({ selectedLanguage, setLanguage }: HeroSectionProps) => {
 
   return (
     <section
-      id="hero"
+      id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-violet-900/20 via-transparent to-pink-900/40" />
