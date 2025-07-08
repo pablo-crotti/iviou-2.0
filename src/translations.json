@@ -67,7 +67,13 @@
       "email_p": "votre@mail.ch",
       "message": "Message",
       "message_p": "Parlez-moi de votre projet...",
-      "send": "Envoyer le message"
+      "send": "Envoyer le message",
+      "required_title": "Tous les champs sont requis",
+      "required_text": "Veuillez remplir tous les champs du formulaire avant de l'envoyer.",
+      "success_title": "Message envoyé avec succès",
+      "success_text": "Merci pour votre message ! Je vous répondrai dans les 48 heures.",
+      "error_title": "Erreur lors de l'envoi du message",
+      "error_text": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer plus tard."
     },
     "footer": {
       "copyright": "Design & code par <iviou /> - 2025",
@@ -159,7 +165,13 @@
       "email_p": "your@mail.com",
       "message": "Message",
       "message_p": "Tell me about your project...",
-      "send": "Send message"
+      "send": "Send message",
+      "required_title": "All fields are required",
+      "required_text": "Please fill in all fields before submitting the form.",
+      "success_title": "Message sent successfully",
+      "success_text": "Thank you for your message! I will reply within 48 hours.",
+      "error_title": "Error sending message",
+      "error_text": "An error occurred while sending your message. Please try again later."
     },
     "footer": {
       "copyright": "Design & code by <iviou /> - 2025",
@@ -251,7 +263,13 @@
       "email_p": "tuo@mail.com",
       "message": "Messaggio",
       "message_p": "Parlami del tuo progetto...",
-      "send": "Invia il messaggio"
+      "send": "Invia il messaggio",
+      "required_title": "Tutti i campi sono obbligatori",
+      "required_text": "Si prega di compilare tutti i campi prima di inviare il modulo.",
+      "success_title": "Messaggio inviato con successo",
+      "success_text": "Grazie per il tuo messaggio! Ti risponderò entro 48 ore.",
+      "error_title": "Errore durante l'invio del messaggio",
+      "error_text": "Si è verificato un errore durante l'invio del messaggio. Riprova più tardi."
     },
     "footer": {
       "copyright": "Design & code di <iviou /> - 2025",

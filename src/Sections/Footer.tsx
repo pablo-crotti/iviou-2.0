@@ -27,7 +27,7 @@ const Footer = ({ selectedLanguage }: AboutSectionProps) => {
             <button
               onClick={() =>
                 document
-                  .getElementById("hero")
+                  .getElementById("home")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
               className="text-gray-400 hover:text-violet-400 transition-colors duration-300 text-sm"

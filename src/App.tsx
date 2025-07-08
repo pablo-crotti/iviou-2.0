@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import HeroSection from "./Sections/HeroSection";
 import AboutSection from "./Sections/AboutSection";
 import SkillsSection from "./Sections/SkillsSection";

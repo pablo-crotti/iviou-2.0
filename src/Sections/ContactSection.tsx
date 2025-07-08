@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Github, Gitlab, Linkedin } from "lucide-react";
 import type { Language } from "../Types";
 import translations from "../translations.json";
+import Alert from "../Components/Alert";
+import type { AlertItem } from "../Components/Alert";
 
 interface AboutSectionProps {
   selectedLanguage: Language;
@@ -14,9 +16,86 @@ const ContactSection = ({ selectedLanguage }: AboutSectionProps) => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [alerts, setAlerts] = useState<AlertItem[]>([]);
+  const [nextId, setNextId] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    if (!formData.email || !formData.name || !formData.message) {
+      setAlerts((prev) => [
+        ...prev,
+        {
+          id: nextId,
+          title: translations[selectedLanguage].contact.required_title,
+          text: translations[selectedLanguage].contact.required_text,
+          type: "error",
+        },
+      ]);
+      return;
+    }
+
+    setLoading(true);
+
+    const payload = {
+      nom_complet: formData.name,
+      email: formData.email,
+      message: formData.message,
+      language: selectedLanguage,
+    };
+
+    try {
+      const response = await fetch("https://mail.iviou.ch/iviou-contact.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      await response.json();
+
+      if (!response.ok) {
+        setAlerts((prev) => [
+          ...prev,
+          {
+            id: nextId,
+            title: translations[selectedLanguage].contact.error_title,
+            text: translations[selectedLanguage].contact.error_text,
+            type: "error",
+          },
+        ]);
+      } else {
+        setAlerts((prev) => [
+          ...prev,
+          {
+            id: nextId,
+            title: translations[selectedLanguage].contact.success_title,
+            text: translations[selectedLanguage].contact.success_text,
+            type: "success",
+          },
+        ]);
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setAlerts((prev) => [
+        ...prev,
+        {
+          id: nextId,
+          title: translations[selectedLanguage].contact.error_title,
+          text: translations[selectedLanguage].contact.error_text,
+          type: "error",
+        },
+      ]);
+    } finally {
+      setLoading(false);
+      setNextId((prev) => prev + 1);
+    }
+
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -32,6 +111,8 @@ const ContactSection = ({ selectedLanguage }: AboutSectionProps) => {
   return (
     <section id="contact" className="py-24 px-4 relative bg-slate-800/30">
       <div className="max-w-4xl mx-auto">
+        <Alert alerts={alerts} setAlerts={setAlerts} />
+
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-violet-600/5 to-pink-600/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-tl from-purple-600/5 to-blue-600/5 rounded-full blur-3xl" />
 
@@ -113,73 +194,89 @@ const ContactSection = ({ selectedLanguage }: AboutSectionProps) => {
             </div>
 
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-300 mb-2"
-                  >
-                    {translations[selectedLanguage].contact.name}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
-                    placeholder={translations[selectedLanguage].contact.name_p}
-                  />
-                </div>
+              {!submitted ? (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
+                      {translations[selectedLanguage].contact.name}
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
+                      placeholder={
+                        translations[selectedLanguage].contact.name_p
+                      }
+                    />
+                  </div>
 
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-300 mb-2"
-                  >
-                    {translations[selectedLanguage].contact.email}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
-                    placeholder={translations[selectedLanguage].contact.email_p}
-                  />
-                </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
+                      {translations[selectedLanguage].contact.email}
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
+                      placeholder={
+                        translations[selectedLanguage].contact.email_p
+                      }
+                    />
+                  </div>
 
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-300 mb-2"
-                  >
-                    {translations[selectedLanguage].contact.message}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300 resize-none"
-                    placeholder={
-                      translations[selectedLanguage].contact.message_p
-                    }
-                  />
-                </div>
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
+                      {translations[selectedLanguage].contact.message}
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={5}
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300 resize-none"
+                      placeholder={
+                        translations[selectedLanguage].contact.message_p
+                      }
+                    />
+                  </div>
 
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r cursor-pointer from-violet-600 to-pink-600 hover:from-violet-500 hover:to-pink-500 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25"
-                >
-                  {translations[selectedLanguage].contact.send}
-                </button>
-              </form>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full disabled:opacity-50 bg-gradient-to-r cursor-pointer from-violet-600 to-pink-600 hover:from-violet-500 hover:to-pink-500 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25"
+                  >
+                    {translations[selectedLanguage].contact.send}
+                  </button>
+                </form>
+              ) : (
+                <>
+                  <p className="text-gray-300 text-center font-bold">
+                    {translations[selectedLanguage].contact.success_title} !
+                  </p>
+                  <p className="text-gray-300 text-center mt-2">
+                    {translations[selectedLanguage].contact.success_text}
+                  </p>
+                </>
+              )}
             </div>
           </div>
         </div>
